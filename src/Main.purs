@@ -13,8 +13,8 @@ main = do
   let n = 10000
       list = 1 .. n
       set  = Set.fromFoldable list
-  listMember <- benchmark \i -> pure $     member i list
-  setMember  <- benchmark \i -> pure $ Set.member i set
+  listMember <- benchmark pure \i -> pure $     member i list
+  setMember  <- benchmark pure \i -> pure $ Set.member i set
   log $ "set terminal png\n"
   log $ gnuplot [ {title: "List member check", benchmark: listMember}
                 , {title: "Set member check",  benchmark: setMember}

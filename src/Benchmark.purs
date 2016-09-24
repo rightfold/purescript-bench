@@ -13,22 +13,25 @@ foreign import data BENCHMARK :: !
 newtype Benchmark = Benchmark (Array Number)
 
 benchmark
-  :: forall eff a
+  :: forall eff a b
    . (Int -> Eff (benchmark :: BENCHMARK | eff) a)
+  -> (a -> Eff (benchmark :: BENCHMARK | eff) b)
   -> Eff (benchmark :: BENCHMARK | eff) Benchmark
 benchmark = benchmark' 50 1000
 
 benchmark'
-  :: forall eff a
+  :: forall eff a b
    . Int
   -> Int
   -> (Int -> Eff (benchmark :: BENCHMARK | eff) a)
+  -> (a -> Eff (benchmark :: BENCHMARK | eff) b)
   -> Eff (benchmark :: BENCHMARK | eff) Benchmark
 benchmark' = _benchmark'
 
 foreign import _benchmark'
-  :: forall eff a
+  :: forall eff a b
    . Int
   -> Int
   -> (Int -> Eff (benchmark :: BENCHMARK | eff) a)
+  -> (a -> Eff (benchmark :: BENCHMARK | eff) b)
   -> Eff (benchmark :: BENCHMARK | eff) Benchmark
