@@ -1,0 +1,22 @@
+{
+  "name": "purescript-bench",
+  "license": "BSD-3-Clause",
+  "ignore": [
+    "/.pulp-cache",
+    "/output",
+    "/src/Main.purs"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^1.1.0",
+    "purescript-eff": "^1.0.0"
+  },
+  "devDependencies": {
+    "purescript-lists": "^1.0.1",
+    "purescript-console": "^1.0.0",
+    "purescript-sets": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rightfold/purescript-bench.git"
+  }
+}
