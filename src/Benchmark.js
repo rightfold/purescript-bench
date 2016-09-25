@@ -11,7 +11,8 @@ exports['_benchmark\''] = function(warmupCount_) {
           var action = action_;
           var benchmark = [];
           for (var i = 0; i < warmupCount; ++i) {
-            action(i)();
+            var value = prepare(i)();
+            action(value)();
           }
           for (var i = 0; i < runCount; ++i) {
             var value = prepare(i)();
