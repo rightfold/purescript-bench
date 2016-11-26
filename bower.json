@@ -7,13 +7,13 @@
     "/src/Main.purs"
   ],
   "dependencies": {
-    "purescript-prelude": "^1.1.0",
-    "purescript-eff": "^1.0.0"
+    "purescript-prelude": "^2.1.0",
+    "purescript-eff": "^2.0.0"
   },
   "devDependencies": {
-    "purescript-lists": "^1.0.1",
-    "purescript-console": "^1.0.0",
-    "purescript-sets": "^1.0.0"
+    "purescript-lists": "^3.2.1",
+    "purescript-console": "^2.0.0",
+    "purescript-sets": "^2.0.0"
   },
   "repository": {
     "type": "git",
