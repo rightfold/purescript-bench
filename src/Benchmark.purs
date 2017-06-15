@@ -5,10 +5,9 @@ module Benchmark
 , benchmark'
 ) where
 
-import Control.Monad.Eff (Eff)
-import Prelude
+import Control.Monad.Eff (Eff, kind Effect)
 
-foreign import data BENCHMARK :: !
+foreign import data BENCHMARK :: Effect
 
 newtype Benchmark = Benchmark (Array Number)
 
