@@ -1,4 +1,4 @@
-module Main
+module Test.Main
 ( main
 ) where
 
