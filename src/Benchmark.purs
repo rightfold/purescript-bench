@@ -1,37 +1,33 @@
 module Benchmark
-( BENCHMARK
-, Benchmark(..)
+( Benchmark(..)
 , benchmark
 , benchmark'
 ) where
 
-import Control.Monad.Eff (Eff)
-import Prelude
-
-foreign import data BENCHMARK :: !
+import Effect (Effect)
 
 newtype Benchmark = Benchmark (Array Number)
 
 benchmark
-  :: forall eff a b
-   . (Int -> Eff (benchmark :: BENCHMARK | eff) a)
-  -> (a -> Eff (benchmark :: BENCHMARK | eff) b)
-  -> Eff (benchmark :: BENCHMARK | eff) Benchmark
+  :: forall a b
+   . (Int -> Effect a)
+  -> (a -> Effect b)
+  -> Effect Benchmark
 benchmark = benchmark' 50 1000
 
 benchmark'
-  :: forall eff a b
+  :: forall a b
    . Int
   -> Int
-  -> (Int -> Eff (benchmark :: BENCHMARK | eff) a)
-  -> (a -> Eff (benchmark :: BENCHMARK | eff) b)
-  -> Eff (benchmark :: BENCHMARK | eff) Benchmark
+  -> (Int -> Effect a)
+  -> (a -> Effect b)
+  -> Effect Benchmark
 benchmark' = _benchmark'
 
 foreign import _benchmark'
-  :: forall eff a b
+  :: forall a b
    . Int
   -> Int
-  -> (Int -> Eff (benchmark :: BENCHMARK | eff) a)
-  -> (a -> Eff (benchmark :: BENCHMARK | eff) b)
-  -> Eff (benchmark :: BENCHMARK | eff) Benchmark
+  -> (Int -> Effect a)
+  -> (a -> Effect b)
+  -> Effect Benchmark

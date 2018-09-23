@@ -2,13 +2,16 @@ module Main
 ( main
 ) where
 
-import Benchmark (benchmark)
-import Benchmark.Plot.Gnuplot (gnuplot)
-import Control.Monad.Eff.Console (log)
-import Data.List ((..), (:), List(..))
-import Data.Set as Set
 import Prelude
 
+import Benchmark (benchmark)
+import Benchmark.Plot.Gnuplot (gnuplot)
+import Data.List ((..), (:), List(..))
+import Data.Set as Set
+import Effect (Effect)
+import Effect.Console (log)
+
+main :: Effect Unit
 main = do
   let n = 10000
       list = 1 .. n

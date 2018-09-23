@@ -3,7 +3,6 @@ module Benchmark.Plot.Gnuplot
 ) where
 
 import Benchmark (Benchmark)
-import Prelude
 
 gnuplot :: Array {title :: String, benchmark :: Benchmark} -> String
 gnuplot = _gnuplot
